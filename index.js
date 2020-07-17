@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function createLi(direction){
     const li = document.createElement("li")
-    li.textConent = direction
+    li.textContent = direction
     movesContainer.append(li)
   }
 
@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", function(){
     } else if(e.key === "ArrowUp"){
       createLi("up")
     } else if(e.key === "Backspace"){
-      console.log('delete')
-    }
+    
     if (directionsPresent()){
     movesContainer.lastChild.remove()
     } else {
       alert("No Directions Present")
+      }
     }
   })
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(){
       const directionli = document.querySelector("li")
       const direction = directionli.textContent
       directionli.remove()
-      moveButton(direction)
+      move(direction)
     } else {
       alert("No Directions Present")
     }
